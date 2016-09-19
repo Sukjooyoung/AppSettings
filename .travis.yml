@@ -2,15 +2,15 @@ language : android
 
 jdk : oraclejdk8
 
-android : 
-  components : 
+android :
+  components :
   - platform-tools
   - tools
   - build-tools-23.0.2
   - android-23
   - extra-android-m2repository
 
-before_install: 
-  - chmod +x gradlew
+before_install:
+  - chmod 777 gradlew
 
 script: ./gradlew build
