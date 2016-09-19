@@ -11,10 +11,25 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    signingConfigs{
+        release{
+            storeFile file("C:\\release\\keystore\\keystore.jks")
+            storePassword("tjrwn6101")
+            keyAlias("testKey")
+            keyPassword("tjrwn6101")
+        }
+    }
+
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
+            buildConfigField "String","MYURL","\"http://real.seoul.go.kr\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            buildConfigField "String","MYURL", "\"http://test.seoul.go.kr\""
         }
     }
 }
